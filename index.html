@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghana: The Expedition | 1957</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghana: The Expedition | 1957</title>
+    <link rel="icon" type="image/png" href="images/Ghana_Coat_Arms.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +64,11 @@
         .text-reveal {
             transform: translateY(110%);
             display: inline-block;
+        }
+        #counter-wrapper span {
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
+            transform: translateZ(0);
         }
     </style>
 </head>
@@ -452,7 +458,7 @@
 
 
             // --- 5. GHANA 69: THE MASTER TIMELINE (Counter, Flash, Star Swell, Color Swap) ---
-            gsap.set("#counter-wrapper", { scale: 45 }); 
+            gsap.set("#counter-wrapper", { scale: 10 }); 
             gsap.set("#years-label", { opacity: 0, y: 20 });
             gsap.set("#celebration-text", { opacity: 0, y: 20 });
             gsap.set("#text-1957", { autoAlpha: 1 });
