@@ -458,11 +458,11 @@
 
 
             // --- 5. GHANA 69: THE MASTER TIMELINE (Counter, Flash, Star Swell, Color Swap) ---
-            gsap.set("#counter-wrapper", { scale: 10 }); 
+            gsap.set("#counter-wrapper", { scale: 1 });
             gsap.set("#years-label", { opacity: 0, y: 20 });
             gsap.set("#celebration-text", { opacity: 0, y: 20 });
-            gsap.set("#text-1957", { autoAlpha: 1 });
-            gsap.set("#year-counter", { autoAlpha: 0 });
+            gsap.set("#text-1957", { autoAlpha: 1, fontSize: "18rem" });
+            gsap.set("#year-counter", { autoAlpha: 0, fontSize: "6rem" });
 
             // Initialize material emissive state to off
             starMesh.material.emissive.setHex(0x000000);
@@ -487,9 +487,9 @@
                 duration: 5.5
             }, 0);
 
-            // 1. The Implosion (White 1957 shrinks)
-            tl69.to("#counter-wrapper", {
-                scale: 1, 
+            // 1. The Implosion (White 1957 shrinks using font-size, not scale)
+            tl69.to("#text-1957", {
+                fontSize: "6rem",
                 duration: 1.5,
                 ease: "expo.in"
             }, 0)
@@ -504,15 +504,15 @@
             .to("#years-label", { opacity: 1, y: 0, duration: 0.5 }, 1.5)
             .to("#celebration-text", { opacity: 1, y: 0, duration: 0.5 }, 1.5)
 
-            // 4. The Count Up & Expansion
+            // 4. The Count Up & Expansion (font-size only, to keep text crisp)
             .to(countObj, {
                 val: 69,
                 duration: 2,
                 ease: "power2.out",
                 onUpdate: () => { document.getElementById("year-counter").innerText = Math.round(countObj.val); }
             }, 1.5)
-            .to("#counter-wrapper", {
-                scale: 8, 
+            .to("#year-counter", {
+                fontSize: "12rem",
                 duration: 2,
                 ease: "power2.out"
             }, 1.5)
