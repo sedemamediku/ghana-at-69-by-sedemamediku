@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana: The Expedition | 1957</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ghRed: '#CE1126',
+                        ghGold: '#FCD116',
+                        ghGreen: '#009054',
+                        ghBlack: '#111111',
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base & Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #0a0a0a; 
+            color: #ffffff; 
+            overflow-x: hidden;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #CE1126 0%, #FCD116 50%, #009054 100%);
+            z-index: 100;
+        }
+
+        /* Hero Image Overlay */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(10,10,10,1) 100%);
+        }
+
+        /* Typography Utilities */
+        .text-reveal-wrap {
+            overflow: hidden;
+        }
+        .text-reveal {
+            transform: translateY(110%);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="font-body antialiased bg-[#0a0a0a]">
+
+    <!-- Scroll Progress -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav id="main-nav" class="fixed w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <div class="text-2xl font-heading font-bold tracking-widest">1957.</div>
+        
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-heading">
+            <a href="http://sedemamediku.vercel.app" target="_blank" class="text-center text-sm font-heading">
+                <span class="underline">By Sedem Amediku</span>
+            </a>
+        </div>
+        
+        <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wider">
+            <a href="#culture" class="hover:text-ghRed transition-colors">THE CULTURE</a>
+            <a href="#nature" class="hover:text-ghGold transition-colors">THE LAND</a>
+            <a href="#history" class="hover:text-ghGreen transition-colors">THE HISTORY</a>
+        </div>
+    </nav>
+    
+    <!-- SECTION 1: HERO -->
+    <section class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden" id="hero">
+        <div class="absolute inset-0 z-0">
+            <img src="images/flagstaff-house.jpg" 
+                 alt="Flagstaff House" 
+                 class="w-full h-full object-cover hero-img opacity-60"
+                 fetchpriority="high">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl">
+            <div class="text-reveal-wrap mb-4">
+                <span class="text-reveal font-heading text-ghGold tracking-[0.3em] uppercase text-sm md:text-lg">Welcome to the Gold Coast</span>
+            </div>
+            <h1 class="font-heading font-black text-6xl md:text-8xl lg:text-9xl tracking-tight leading-none mb-6">
+                <div class="text-reveal-wrap"><span class="text-reveal title-word">FREEDOM</span></div>
+                <div class="text-reveal-wrap"><span class="text-reveal title-word">& JUSTICE</span></div>
+            </h1>
+            <div class="text-reveal-wrap">
+                <p class="text-reveal text-gray-300 md:text-xl font-light max-w-2xl mx-auto">
+                    Embark on a digital expedition through the heart of West Africa. Discover the resilience, beauty, and vibrant culture of Ghana.
+                </p>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 z-10 flex flex-col items-center opacity-0 scroll-indicator">
+            <span class="text-xs tracking-widest text-gray-400 mb-2 uppercase">Scroll to Explore</span>
+            <div class="w-[1px] h-12 bg-gray-600 overflow-hidden relative">
+                <div class="w-full h-full bg-ghGold absolute top-0 left-0 animate-[scrollDown_2s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: CULTURE (Red) -->
+    <section id="culture" class="pin-section relative h-screen w-full flex flex-col md:flex-row bg-[#0a0a0a] overflow-hidden border-t border-gray-900">
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center p-8 md:p-20 z-10 section-text order-2 md:order-1">
+            <div>
+                <h4 class="text-ghRed font-heading tracking-widest mb-4 font-bold text-sm md:text-base">01. THE PULSE</h4>
+                <h2 class="text-3xl md:text-6xl font-heading font-bold mb-4 md:mb-6 leading-tight">Vibrancy of <br>The People</h2>
+                <p class="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+                    The soul of Ghana lives in its people. From the majesty of the Asantehene and Kings, to the intricately woven Kente cloth, beautiful bead markets, and the bustling, colorful energy of Makola Market.
+                </p>
+                <button onclick="window.location.href='connect.html?v=culture'" class="border border-white hover:border-ghRed hover:bg-ghRed transition-colors duration-300 px-6 py-2 md:px-8 md:py-3 rounded-full uppercase tracking-wider text-xs md:text-sm font-semibold opacity-0 cursor-pointer">
+                    Feel The Culture
+                </button>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden order-1 md:order-2">
+            <div class="img-track w-full flex flex-col">
+                <img src="images/ghana-street-culture.webp" alt="Street Culture" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" fetchpriority="high">
+                <img src="images/ghana beads market.webp" alt="Beads Market" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/makola.jpg" alt="Makola Market" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/ga-mantse-and-Asantehene.jpg" alt="Ga Mantse and Asantehene" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: NATURE (Gold) -->
+    <section id="nature" class="pin-section relative h-screen w-full flex flex-col md:flex-row bg-[#0a0a0a] overflow-hidden border-t border-gray-900">
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden order-1 md:order-1">
+            <div class="img-track w-full flex flex-col">
+                <img src="images/Kakum-National-Park-bridge.jpg" alt="Kakum Bridge" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/kakum-national-park-walk.jpg" alt="Kakum Walk" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/Kakum-national-park-ground-view.jpg" alt="Kakum Ground View" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/KAKUM-NATIONAL-PARK-4.jpg" alt="Kakum Park" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/kakum-national-park-tour.jpeg" alt="Kakum Tour" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/Kakum-National-Park-elephant-in-bush.jpg" alt="Mole Elephants" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center p-8 md:p-20 z-10 section-text order-2 md:order-2">
+            <div>
+                <h4 class="text-ghGold font-heading tracking-widest mb-4 font-bold text-sm md:text-base">02. THE LAND</h4>
+                <h2 class="text-3xl md:text-6xl font-heading font-bold mb-4 md:mb-6 leading-tight">The Canopy & <br>The Savannah</h2>
+                <p class="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+                    From the dizzying heights of the Kakum National Park canopy walkway suspended above the rainforest, to the majestic elephants roaming freely in the savannahs. Ghana's natural wealth is a treasure of biodiversity.
+                </p>
+                <button onclick="window.location.href='connect.html?v=nature'" class="border border-white hover:border-ghGold hover:bg-ghGold hover:text-black transition-colors duration-300 px-6 py-2 md:px-8 md:py-3 rounded-full uppercase tracking-wider text-xs md:text-sm font-semibold opacity-0 cursor-pointer">
+                    Discover The Wild
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: HISTORY (Green) -->
+    <section id="history" class="pin-section relative h-screen w-full flex flex-col md:flex-row bg-[#0a0a0a] overflow-hidden border-t border-gray-900">
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen flex flex-col justify-center p-8 md:p-20 z-10 section-text order-2 md:order-1">
+            <div>
+                <h4 class="text-ghGreen font-heading tracking-widest mb-4 font-bold text-sm md:text-base">03. THE ROOTS</h4>
+                <h2 class="text-3xl md:text-6xl font-heading font-bold mb-4 md:mb-6 leading-tight">Echoes of <br>Elmina & Cape Coast</h2>
+                <p class="text-gray-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+                    Standing as poignant symbols of the past, the historic castles along the coast bear witness to Ghana's complex history. Before the joy of independence came a long, enduring struggle. We remember the ancestors who passed through the "Door of No Return."
+                </p>
+                <button onclick="window.location.href='connect.html?v=history'" class="border border-white hover:border-ghGreen hover:bg-ghGreen transition-colors duration-300 px-6 py-2 md:px-8 md:py-3 rounded-full uppercase tracking-wider text-xs md:text-sm font-semibold opacity-0 cursor-pointer">
+                    Explore The History
+                </button>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden order-1 md:order-2">
+            <div class="img-track w-full flex flex-col">
+                <img src="images/Cape-Coast-Castle.png" alt="Cape Coast Castle" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/cape-coast-slave-castle-courtyard-ghana-cape-coast-castle-day-trip-from-accra-elmina-castle-slave-fort-tour-IMG_1043.jpg" alt="Cape Coast Castle View" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+                <img src="images/cape-coast-castle-front-view.jpg" alt="Cape Coast Castle Front View" class="w-full h-[50vh] md:h-screen object-cover block flex-shrink-0" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: GHANA AT 69 (The Big Bang & Star Glow Sequence) -->
+    <section id="ghana-69" class="relative h-screen w-full flex flex-col justify-center items-center bg-[#0a0a0a] overflow-hidden border-t border-gray-900">
+        
+        <!-- Big Bang Flash Overlay -->
+        <div id="bang-flash" class="absolute inset-0 bg-white z-20 opacity-0 pointer-events-none mix-blend-overlay"></div>
+
+        <!-- Three.js Canvas Container for 3D Object -->
+        <div id="canvas-container" class="absolute inset-0 z-0 opacity-80 pointer-events-none"></div>
+
+        <!-- Text & Counter Container -->
+        <div class="relative z-10 text-center px-6 w-full h-full flex flex-col items-center justify-center">
+            
+            <!-- The Number Wrapper -->
+            <div class="h-40 flex items-center justify-center">
+                <div id="counter-wrapper" class="relative flex items-center justify-center">
+                    <!-- Static White 1957 Text (Shrinks down) -->
+                    <span id="text-1957" class="font-heading font-black text-white text-4xl leading-none">1957</span>
+                    
+                    <!-- Dynamic Gold Counter Text (Grows out from 0 to 69) -->
+                    <!-- Used inline style for text-shadow so GSAP can comfortably tween it to zero -->
+                    <span id="year-counter" class="absolute inset-0 flex items-center justify-center font-heading font-black text-ghGold text-4xl leading-none opacity-0" style="text-shadow: 0 0 20px rgba(252,209,22,0.8);">0</span>
+                </div>
+            </div>
+
+            <!-- The Years Text -->
+            <span id="years-label" class="font-heading text-white tracking-[0.5em] uppercase text-3xl mt-4">YEARS</span>
+            
+            <!-- Description Text -->
+            <p id="celebration-text" class="absolute bottom-16 text-gray-300 text-lg md:text-2xl font-light text-center px-6 max-w-3xl">
+                From the historic declaration at Old Polo Grounds to the vibrant, forward-looking nation of today. The Black Star continues to shine brightly, inspiring generations across the continent and the diaspora.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONCLUSION -->
+    <footer id="main-footer" class="relative h-[70vh] flex flex-col justify-center items-center text-center bg-ghBlack overflow-hidden border-t border-gray-900">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="images/flagstaff-house.jpg" alt="Ghana Background" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 px-4">
+            <svg class="w-16 h-16 mx-auto mb-6 text-ghGold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <h2 class="font-heading text-5xl md:text-7xl font-bold mb-4">The Lodestar of Africa</h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">Celebrating the past, present, and the bright future of the Black Star nation.</p>
+            <p class="text-sm font-bold tracking-widest text-white">HAPPY INDEPENDENCE DAY • MARCH 6, 2026</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-ghGold text-black p-4 rounded-full shadow-[0_0_20px_rgba(252,209,22,0.5)] z-[100] transition-transform duration-300 hover:bg-white hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <!-- Scripts -->
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Three.js for 3D Object -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // Custom animation for the scroll indicator line
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes scrollDown {
+                0% { transform: translateY(-100%); }
+                50% { transform: translateY(0); }
+                100% { transform: translateY(100%); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // --- 1. HERO ANIMATION (On Load) ---
+            const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+            
+            heroTl.fromTo(".hero-img", 
+                { scale: 1.2, opacity: 0 }, 
+                { scale: 1, opacity: 0.6, duration: 2.5 }
+            )
+            .to(".text-reveal", {
+                y: "0%",
+                duration: 1.2,
+                stagger: 0.15
+            }, "-=1.5")
+            .to(".scroll-indicator", {
+                opacity: 1,
+                y: -10,
+                duration: 1
+            }, "-=0.5");
+
+            // --- 2. SCROLL PROGRESS BAR ---
+            gsap.to("#progressBar", {
+                width: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.3
+                }
+            });
+
+            // --- 3. EXPEDITION SECTIONS (Entrance & Image Cycling) ---
+            const pinSections = gsap.utils.toArray('.pin-section');
+
+            pinSections.forEach((section) => {
+                const track = section.querySelector('.img-track');
+                const images = track.querySelectorAll('img');
+                const textElements = section.querySelectorAll('.section-text > div > *:not(button)');
+                const button = section.querySelector('button');
+                
+                if (textElements.length > 0) {
+                    gsap.set(textElements, { y: 40, opacity: 0 });
+                }
+                if (button) {
+                    gsap.set(button, { opacity: 0, scale: 0.8 });
+                }
+
+                const entranceTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 75%", 
+                        toggleActions: "play none none reverse"
+                    }
+                });
+
+                if (textElements.length > 0) {
+                    entranceTl.to(textElements, { 
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" 
+                    }); 
+                }
+
+                if(images.length > 1) {
+                    const yMovement = - (100 * (images.length - 1) / images.length);
+
+                    const pinTl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top top", 
+                            pin: true,
+                            scrub: 1, 
+                            end: () => "+=" + (section.offsetHeight * images.length)
+                        }
+                    });
+
+                    // Initial Pause implemented
+                    pinTl.to({}, { duration: 0.2 });
+
+                    pinTl.to(track, {
+                        yPercent: yMovement,
+                        ease: "none", 
+                        duration: images.length - 1 
+                    });
+
+                    if (button) {
+                        let startDelay = 1; 
+                        let animDuration = 1; 
+
+                        if (images.length < 3) {
+                            startDelay = 0.5;
+                            animDuration = 0.5;
+                        }
+
+                        pinTl.to(button, {
+                            opacity: 1,
+                            scale: 1,
+                            ease: "power2.out",
+                            duration: animDuration
+                        }, startDelay + 0.2); 
+                    }
+                } else if (button) {
+                    entranceTl.to(button, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out"}, "-=0.5");
+                }
+            });
+
+            // --- 4. THREE.JS 3D STAR IMPLEMENTATION (MOVED UP FOR SYNC) ---
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 15;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xffdf00, 1.5, 100);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+
+            const pointLight2 = new THREE.PointLight(0xffffff, 0.8, 100);
+            pointLight2.position.set(-10, -10, 10);
+            scene.add(pointLight2);
+
+            function createStarShape() {
+                const shape = new THREE.Shape();
+                const outerRadius = 5;
+                const innerRadius = 2.2;
+                const points = 5;
+
+                for (let i = 0; i < points * 2; i++) {
+                    const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                    const angle = (i / (points * 2)) * Math.PI * 2;
+                    const x = Math.cos(angle - Math.PI / 2) * radius;
+                    const y = Math.sin(angle - Math.PI / 2) * radius;
+
+                    if (i === 0) shape.moveTo(x, y);
+                    else shape.lineTo(x, y);
+                }
+                shape.closePath();
+                return shape;
+            }
+
+            const extrudeSettings = { 
+                depth: 1.5, 
+                bevelEnabled: true, 
+                bevelSegments: 4, 
+                steps: 2, 
+                bevelSize: 0.3, 
+                bevelThickness: 0.3 
+            };
+            const geometry = new THREE.ExtrudeGeometry(createStarShape(), extrudeSettings);
+            geometry.center();
+
+            // Note: Removed THREE.DoubleSide so the star backfaces aren't drawn when camera enters it
+            const material = new THREE.MeshStandardMaterial({ 
+                color: 0xFCD116,
+                metalness: 0.8,
+                roughness: 0.2
+            });
+
+            const starMesh = new THREE.Mesh(geometry, material);
+            scene.add(starMesh);
+
+            let time = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                time += 0.01;
+                starMesh.position.y = Math.sin(time) * 0.8; // Gentle floating
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+
+            // --- 5. GHANA 69: THE MASTER TIMELINE (Counter, Flash, Star Swell, Color Swap) ---
+            gsap.set("#counter-wrapper", { scale: 45 }); 
+            gsap.set("#years-label", { opacity: 0, y: 20 });
+            gsap.set("#celebration-text", { opacity: 0, y: 20 });
+            gsap.set("#text-1957", { autoAlpha: 1 });
+            gsap.set("#year-counter", { autoAlpha: 0 });
+
+            // Initialize material emissive state to off
+            starMesh.material.emissive.setHex(0x000000);
+
+            const tl69 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#ghana-69",
+                    start: "top top",
+                    end: "+=400%", // Extended greatly to allow room for the final star expansion phase
+                    pin: true,
+                    scrub: 1
+                }
+            });
+
+            let countObj = { val: 0 };
+
+            // Rotate the Star continuously throughout the entire sequence (0 to 5.5 total duration)
+            tl69.to(starMesh.rotation, {
+                y: Math.PI * 4, // 2 full spins
+                z: Math.PI / 2, 
+                ease: "none",
+                duration: 5.5
+            }, 0);
+
+            // 1. The Implosion (White 1957 shrinks)
+            tl69.to("#counter-wrapper", {
+                scale: 1, 
+                duration: 1.5,
+                ease: "expo.in"
+            }, 0)
+
+            // 2. The Flash
+            .to("#bang-flash", { opacity: 1, duration: 0.1, ease: "power2.in" }, 1.4)
+            .to("#bang-flash", { opacity: 0, duration: 0.4, ease: "power2.out" }, 1.5)
+
+            // 3. The Swap
+            .to("#text-1957", { autoAlpha: 0, duration: 0.01 }, 1.5)
+            .to("#year-counter", { autoAlpha: 1, duration: 0.01 }, 1.5)
+            .to("#years-label", { opacity: 1, y: 0, duration: 0.5 }, 1.5)
+            .to("#celebration-text", { opacity: 1, y: 0, duration: 0.5 }, 1.5)
+
+            // 4. The Count Up & Expansion
+            .to(countObj, {
+                val: 69,
+                duration: 2,
+                ease: "power2.out",
+                onUpdate: () => { document.getElementById("year-counter").innerText = Math.round(countObj.val); }
+            }, 1.5)
+            .to("#counter-wrapper", {
+                scale: 8, 
+                duration: 2,
+                ease: "power2.out"
+            }, 1.5)
+
+            // 5. The Star Engulf Sequence (Triggers exactly after 69 is hit at time 3.5)
+            .to(starMesh.material.emissive, {
+                r: 252/255, g: 209/255, b: 22/255, // Golden glow color
+                duration: 1.5,
+                ease: "power2.in"
+            }, 3.5)
+            .to(starMesh.scale, {
+                x: 60, y: 60, z: 60, // Massive scale to swallow the camera
+                duration: 2,
+                ease: "power2.in"
+            }, 3.5)
+
+            // 6. Seamless Fallback, Text Switch to Black, and Nav Swap (Starting earlier to sync with Star swallowing screen)
+            .to("#ghana-69", {
+                backgroundColor: "#FCD116", // Swap HTML background to Gold a bit early so it catches the canvas cleanly
+                duration: 1.2,
+                ease: "power2.inOut"
+            }, 3.8)
+            .to(["#year-counter", "#years-label", "#celebration-text"], {
+                color: "#111111", // Swap all text to black exactly as gold washes over
+                duration: 1,
+                ease: "power2.inOut"
+            }, 4.0)
+            .to("#main-nav", {
+                color: "#111111", // Change Nav Text to Black
+                mixBlendMode: "normal", // Turn off blend mode so it's perfectly visible on gold
+                duration: 1,
+                ease: "power2.inOut"
+            }, 4.0)
+            .to("#year-counter", {
+                textShadow: "0px 0px 0px rgba(252,209,22,0)", // Removes the drop shadow natively
+                duration: 1,
+                ease: "power2.inOut"
+            }, 4.0)
+            .to("#canvas-container", {
+                opacity: 0, // Gently fade out the 3D canvas right as the camera passes through the star surface
+                duration: 0.5,
+                ease: "power1.inOut"
+            }, 4.5);
+
+
+            // --- 6. BACK TO TOP BUTTON LOGIC ---
+            gsap.set("#backToTop", { autoAlpha: 0, y: 20 });
+            
+            ScrollTrigger.create({
+                trigger: "#main-footer",
+                start: "top 80%", 
+                onEnter: () => gsap.to("#backToTop", { autoAlpha: 1, y: 0, duration: 0.3, pointerEvents: "auto" }),
+                onLeaveBack: () => gsap.to("#backToTop", { autoAlpha: 0, y: 20, duration: 0.3, pointerEvents: "none" })
+            });
+
+            document.getElementById("backToTop").addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    </script>
+</body>
+</html>

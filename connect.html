@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghana Expedition | Connect</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ghRed: '#CE1126',
+                        ghGold: '#FCD116',
+                        ghGreen: '#009054',
+                        ghBlack: '#111111',
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-white font-body min-h-screen flex flex-col selection:bg-ghGold selection:text-black overflow-x-hidden">
+
+    <!-- Cinematic Background: Kente Cloth with Deep Radial Vignette -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <!-- Kente Pattern Image -->
+        <img src="https://images.unsplash.com/photo-1547471080-7fc2caa62e56?q=80&w=2000&auto=format&fit=crop" alt="Kente Pattern" class="w-full h-full object-cover opacity-60 mix-blend-luminosity">
+        
+        <!-- Radial Gradient to black out the center and reveal edges -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(10,10,10,0.7)_0%,_rgba(10,10,10,0.95)_60%,_rgba(10,10,10,1)_100%)]"></div>
+        
+        <!-- Top shadow overlay for navbar readability -->
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent"></div>
+    </div>
+
+    <!-- Afrocentric Top Ribbon -->
+    <div class="w-full h-1.5 flex fixed top-0 left-0 z-[60]">
+        <div class="flex-1 bg-ghRed"></div>
+        <div class="flex-1 bg-ghGold"></div>
+        <div class="flex-1 bg-ghGreen"></div>
+        <div class="flex-1 bg-[#111111]"></div>
+    </div>
+
+    <!-- Navbar (Transparent to blend with cinematic view) -->
+    <nav class="w-full px-6 py-6 flex justify-between items-center relative z-50 mt-1">
+        <div class="text-xl md:text-2xl font-heading font-bold tracking-widest cursor-pointer hover:text-ghGold transition-colors drop-shadow-md" onclick="window.location.href='index.html'">1957.</div>
+        
+        <!-- Center title (hidden on mobile) -->
+        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg font-heading text-gray-300 tracking-[0.3em] drop-shadow-md">
+            CONNECT
+        </div>
+
+        <button onclick="window.location.href='index.html'" class="text-xs md:text-sm font-semibold tracking-wider text-gray-300 hover:text-white transition-colors flex items-center gap-2 group drop-shadow-md">
+            <svg class="w-4 h-4 md:w-5 md:h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            BACK TO MAIN
+        </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 flex-1 w-full mx-auto px-4 md:px-8 pb-16 flex flex-col items-center justify-center">
+        
+        <!-- Cinematic Video Stage -->
+        <div class="w-full max-w-[1400px] flex flex-col">
+            
+            <!-- Video Player -->
+            <div id="video-ring" class="relative w-full rounded-xl md:rounded-2xl overflow-hidden ring-1 ring-gray-800 transition-all duration-1000 bg-[#050505] group shadow-[0_0_80px_rgba(0,0,0,0.5)] z-20 aspect-video">
+                
+                <!-- Loading Pulse Background -->
+                <div class="absolute inset-0 flex items-center justify-center bg-[#050505] animate-pulse z-0">
+                    <span class="text-gray-600 font-heading tracking-widest text-sm">ESTABLISHING CONNECTION...</span>
+                </div>
+                
+                <!-- The Iframe -->
+                <iframe id="main-video" class="absolute top-0 left-0 w-full h-full z-10 scale-[1.01]" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Content Flex Row (Text on Left, Playlist on Right) -->
+            <div class="w-full flex flex-col xl:flex-row gap-8 lg:gap-12 mt-8 md:mt-12 items-start bg-black/40 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5">
+                
+                <!-- Text Description Area -->
+                <div class="w-full xl:w-2/5">
+                    <h4 id="video-category" class="font-heading tracking-widest text-sm font-bold mb-3 uppercase transition-colors duration-500 text-gray-500">Loading...</h4>
+                    <h1 id="video-title" class="font-heading text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight drop-shadow-lg">Connecting to Archive</h1>
+                    <p id="video-desc" class="text-gray-300 text-base md:text-lg leading-relaxed">Please wait while the historic footage is being retrieved.</p>
+                </div>
+
+                <!-- Playlist Grid -->
+                <div class="w-full xl:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Culture Card -->
+                    <div id="card-culture" onclick="loadVideo('culture')" class="playlist-card group relative p-4 lg:p-5 rounded-xl cursor-pointer border border-white/10 bg-black/60 backdrop-blur-md transition-all overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-ghRed/20">
+                        <div class="active-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-ghRed scale-y-0 transition-transform origin-top duration-300"></div>
+                        <h4 class="text-ghRed font-heading text-[10px] tracking-widest mb-2 font-bold">01. THE PULSE</h4>
+                        <h3 class="font-heading text-sm md:text-base font-bold text-white group-hover:text-ghRed transition-colors duration-300 mb-2">Vibrancy of the People</h3>
+                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">Dive into the heart of Ghana. Experience the rhythm of the streets and the vibrant culture.</p>
+                    </div>
+
+                    <!-- Nature Card -->
+                    <div id="card-nature" onclick="loadVideo('nature')" class="playlist-card group relative p-4 lg:p-5 rounded-xl cursor-pointer border border-white/10 bg-black/60 backdrop-blur-md transition-all overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-ghGold/20">
+                        <div class="active-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-ghGold scale-y-0 transition-transform origin-top duration-300"></div>
+                        <h4 class="text-ghGold font-heading text-[10px] tracking-widest mb-2 font-bold">02. THE LAND</h4>
+                        <h3 class="font-heading text-sm md:text-base font-bold text-white group-hover:text-ghGold transition-colors duration-300 mb-2">The Canopy & Savannah</h3>
+                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">Explore the breathtaking natural wealth of Ghana, from rainforests to elephant savannahs.</p>
+                    </div>
+
+                    <!-- History Card -->
+                    <div id="card-history" onclick="loadVideo('history')" class="playlist-card group relative p-4 lg:p-5 rounded-xl cursor-pointer border border-white/10 bg-black/60 backdrop-blur-md transition-all overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-ghGreen/20">
+                        <div class="active-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-ghGreen scale-y-0 transition-transform origin-top duration-300"></div>
+                        <h4 class="text-ghGreen font-heading text-[10px] tracking-widest mb-2 font-bold">03. THE ROOTS</h4>
+                        <h3 class="font-heading text-sm md:text-base font-bold text-white group-hover:text-ghGreen transition-colors duration-300 mb-2">Echoes of Elmina</h3>
+                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">Journey back in time and stand before the historic castles of Cape Coast and Elmina.</p>
+                    </div>
+
+                </div>
+                <div>
+                    <a href="http://sedemamediku.vercel.app" target="_blank" class="text-center text-sm font-heading">
+                        <span class="underline">By Sedem Amediku</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const videoData = {
+            culture: {
+                id: 'JILfRdA5oWs',
+                category: '01. THE PULSE',
+                title: 'Vibrancy of the People',
+                desc: 'Dive into the heart of Ghana. Experience the rhythm of the streets, the majestic culture of the Kings, the vibrant Makola market, and the intricate art of Kente and bead making.',
+                colorHex: '#CE1126', // Red
+                shadowGlow: 'rgba(206, 17, 38, 0.4)'
+            },
+            nature: {
+                id: 'H6QxdIb1Mjc',
+                category: '02. THE LAND',
+                title: 'The Canopy & The Savannah',
+                desc: 'Explore the breathtaking natural wealth of Ghana. From the thrilling heights of the Kakum canopy walkway suspended above the rainforest, to the majestic elephants roaming freely in the savannahs.',
+                colorHex: '#FCD116', // Gold
+                shadowGlow: 'rgba(252, 209, 22, 0.25)'
+            },
+            history: {
+                id: 'zJi9OBWsMSI',
+                category: '03. THE ROOTS',
+                title: 'Echoes of Elmina',
+                desc: 'Journey back in time. Stand before the historic castles of Cape Coast and Elmina, solemn monuments that bear witness to the resilience and enduring spirit of the ancestors.',
+                colorHex: '#006B3F', // Green
+                shadowGlow: 'rgba(0, 107, 63, 0.4)'
+            }
+        };
+
+        function loadVideo(topic) {
+            // Fallback to culture if invalid topic is passed
+            const data = videoData[topic] || videoData['culture'];
+            const actualTopic = videoData[topic] ? topic : 'culture';
+            
+            // 1. Update Iframe (Using autoplay for a seamless transition experience)
+            const iframe = document.getElementById('main-video');
+            iframe.src = `https://www.youtube.com/embed/${data.id}?autoplay=1&rel=0`;
+
+            // 2. Update Text Descriptions
+            const catElem = document.getElementById('video-category');
+            catElem.textContent = data.category;
+            catElem.style.color = data.colorHex;
+
+            document.getElementById('video-title').textContent = data.title;
+            document.getElementById('video-desc').textContent = data.desc;
+
+            // 3. Update Video Ring Color dynamically to create an immersive cinematic glow
+            const ring = document.getElementById('video-ring');
+            ring.style.borderColor = data.colorHex;
+            ring.style.boxShadow = `0 20px 100px -20px ${data.shadowGlow}`;
+
+            // 4. Update Active Card States securely
+            document.querySelectorAll('.playlist-card').forEach(card => {
+                // Reset to default styling
+                card.style.borderColor = 'rgba(255,255,255,0.1)'; 
+                card.classList.remove('bg-white/5', '-translate-y-1', 'ring-1');
+                card.style.boxShadow = 'none';
+                card.querySelector('.active-indicator').style.transform = 'scaleY(0)';
+            });
+            
+            // Set the clicked card to active styling
+            const activeCard = document.getElementById(`card-${actualTopic}`);
+            if (activeCard) {
+                activeCard.style.borderColor = data.colorHex;
+                activeCard.classList.add('bg-white/5', '-translate-y-1');
+                activeCard.style.boxShadow = `0 10px 30px -10px ${data.shadowGlow}`;
+                activeCard.querySelector('.active-indicator').style.transform = 'scaleY(1)';
+            }
+            
+            // 5. Update URL parameter without reloading the page
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?v=' + actualTopic;
+            window.history.pushState({path:newUrl}, '', newUrl);
+
+            // Smooth scroll to top when changing video if on mobile
+            if(window.innerWidth < 1024) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Intercept browser back/forward buttons to update the video
+        window.addEventListener('popstate', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            loadVideo(urlParams.get('v'));
+        });
+
+        // Initial Load when the page is opened
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const topic = urlParams.get('v') || 'culture';
+            loadVideo(topic);
+        };
+    </script>
+</body>
+</html>
